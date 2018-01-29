@@ -1,0 +1,123 @@
+@font-face {
+    font-family: minoinPro;
+    src: url(src/mp.ttf);
+}
+
+body{
+
+    font-family: minoinPro;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.menu{
+
+    position: relative;
+    display: inline-block;
+
+}
+
+.menu:link{
+
+    text-decoration: none;
+    color: white;
+
+}
+
+.menu:visited{
+
+    color: white;
+
+}
+
+
+#background{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.background{
+
+    /*z-index: -100;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+
+}
+
+#verticalTitle{
+
+    z-index: 100;
+    position:absolute;
+    font-size: 60pt;
+    color:white;
+    vertical-align: middle;
+    line-height: 100px;
+
+    cursor: crosshair;
+
+
+}
+
+
+#menu{
+
+    width: 500px;
+    z-index: 10;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    color: white;
+    font-size: 30pt;
+    cursor: crosshair;
+
+}
+
+.bg-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    background: transparent url(pics/bg_pattern_2.png) repeat top left;
+}
+
+.end{
+
+    width: 100%;
+    height: 200px;
+
+    background-color: whitesmoke;
+
+
+
+}
+
+.endP{
+
+    line-height: 15px;
+    font-size: 15pt;
+    width: 100%;
+    text-align: center;
+
+
+}
+
+.selectLine{
+
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    border-bottom: solid white;
+
+}
