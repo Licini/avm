@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Works</title>
+    <link rel="stylesheet" href="avm.css">
+    <style>
+
+        body{
+
+            /*overflow: hidden;*/
+            padding: 0;
+            margin: 0;
+
+        }
+
+    </style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<div id="menu" style="color: black">
+
+    <a>Work / </a>
+    <a>About / </a>
+    <a>Contact / </a>
+
+</div>
+
+<div id="verticalTitle"><img id="cube0" src="pics/Cube.png">   Astrid von Mühlenbrock <div class="selectLine"></div></div>
+<div id="leftRowContainer"></div>
+<div id="rightRowContainer">
+
+
+</div>
+
+<div class="end">
+    <br><br>
+    <h3 class="endP">Selected Works</h3>
+    <h3 class="endP">av.muhlenbrock@gmail.com</h3>
+    <h3 class="endP">tel+6468303944</h3>
+
+</div>
+
+
+<script>
+
+    $('#cube0').css({
+        'transform' : 'rotate(-90deg)',
+        'width':'65px'
+    });
+
+    $('#verticalTitle').css({
+        'position':'fixed',
+        'transform' : 'rotate(-90deg)',
+        'left': '-10%',
+        'top':'40%',
+        'color':'black'
+    });
+
+
+
+
+    // insert contents
+
+
+
+    $.get('pics/work/description.json',function (data) {
+
+        var works = data.works;
+
+        var projects = [];
+
+        for(var i=0; i<=8; i++){
+
+            $('#leftRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
+            projects[i] = $('#project'+i);
+
+
+        }
+
+
+        for(var i=9; i<=16; i++){
+
+            //$('#rightRowContainer').append('<div id="project'+i+'" class="projectBlock"><img class="projectImg" src="pics/work/'+i+'.jpg"><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
+            $('#rightRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
+            projects[i] = $('#project'+i);
+
+
+
+        }
+
+
+        projects.forEach(function (p,n) {
+
+            var imageContainer = p.find('.projectImg');
+            imageContainer.append('<img src="pics/work/'+n+'.jpg" style="width:100%; position: relative; visibility: hidden;">');
+            imageContainer.append('<div class="mask"><div class="maskColor"></div><div class="maskText">'+works[n].title+'</div></div>');
+
+            imageContainer.css({
+
+                "background": "url('pics/work/"+n+".jpg') no-repeat",
+                "background-size": "100%"
+
+            });
+
+            p.mouseenter(function () {
+
+                p.find('.selectLine').fadeIn(200);
+                p.find('.mask').animate({'opacity':0.9},200)
+
+            });
+
+            p.mouseleave(function () {
+
+                p.find('.selectLine').fadeOut(200);
+                p.find('.mask').animate({'opacity':0},200)
+
+
+            });
+
+        });
+
+
+    })
+
+
+
+</script>
+
+</body>
+</html>
