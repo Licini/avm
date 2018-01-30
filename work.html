@@ -19,15 +19,16 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<div id="menu" style="color: black">
+<div id="menu" class="black">
 
-    <a>Work / </a>
-    <a>About / </a>
-    <a>Contact / </a>
+    <div class="menu black" id="work">Work <div class="selectLine blackLine"></div></div>  /
+    <div class="menu black" id="about">About <div class="selectLine blackLine"></div></div>  /
+    <div class="menu black" id="contact">Contact <div class="selectLine blackLine"></div></div>  /
+
 
 </div>
 
-<div id="verticalTitle"><img id="cube0" src="pics/Cube.png">   Astrid von Mühlenbrock <div class="selectLine"></div></div>
+<div id="verticalTitle"><img id="cube0" src="pics/Cube.png">   Astrid von Mühlenbrock <div class="selectLine blackLine"></div></div>
 <div id="leftRowContainer"></div>
 <div id="rightRowContainer">
 
@@ -127,6 +128,6 @@
 
 
 </script>
-
+<script src="menu.js"></script>
 </body>
 </html>

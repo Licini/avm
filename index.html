@@ -17,19 +17,19 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<div id="menu">
+<div id="menu" class="white">
 
-    <div class="menu">Work <div class="selectLine"></div></div>  /
-    <div class="menu">About <div class="selectLine"></div></div>  /
-    <div class="menu">Contact <div class="selectLine"></div></div>  /
+    <div class="menu" id="work">Work <div class="selectLine"></div></div>  /
+    <div class="menu" id="about">About <div class="selectLine"></div></div>  /
+    <div class="menu" id="contact">Contact <div class="selectLine"></div></div>  /
 
 
 </div>
 
 
-<div id="background"><div class="bg-overlay"></div>
+<div id="background"><div class="bg-overlay"></div></div>
 
-<div id="verticalTitle"><img id="cube0" src="pics/Cube0.png">   Astrid von Mühlenbrock <div class="selectLine"></div>
+<div id="verticalTitle"><img id="cube0" src="pics/Cube0.png">   Astrid von Mühlenbrock <div class="selectLine"></div></div>
 
 
 <script>
@@ -124,42 +124,6 @@
     }
 
 
-    $('#verticalTitle').mouseenter(function () {
-
-        $(this).find('.selectLine').fadeIn(200)
-
-    });
-
-    $('#verticalTitle').mouseleave(function () {
-
-        $(this).find('.selectLine').fadeOut(200)
-
-    });
-
-
-    $('.menu').mouseenter(function () {
-
-        $(this).find('.selectLine').fadeIn(200)
-
-    });
-
-    $('.menu').mouseleave(function () {
-
-        $(this).find('.selectLine').fadeOut(200)
-
-    });
-
-    $('#menu').click(function () {
-
-        $(this).animate({top:'-10%'},1000);
-        setTimeout(function () {
-
-            window.location.replace('about.html')
-
-        },1000)
-
-    });
-
 
     setInterval(function () {
 
@@ -208,6 +172,6 @@
 
 
 </script>
-
+<script src="menu.js"></script>
 </body>
 </html>

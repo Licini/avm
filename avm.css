@@ -75,7 +75,6 @@ body{
     position: absolute;
     right: 5%;
     top: 5%;
-    color: white;
     font-size: 30pt;
     cursor: crosshair;
 
@@ -118,6 +117,18 @@ body{
     width: 100%;
     top: 50%;
     border-bottom: solid white;
+
+}
+
+.black{
+
+    color: black;
+
+}
+
+.white{
+
+    color: white;
 
 }
 
