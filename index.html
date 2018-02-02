@@ -17,6 +17,7 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<div class="load"> <img src="pics/load/0.gif" class="loadImg"></div>
 <div id="menu" class="white">
 
     <div class="menu" id="work">Work <div class="selectLine"></div></div>  /
@@ -29,36 +30,23 @@
 
 <div id="background"><div class="bg-overlay"></div></div>
 
-<div id="verticalTitle"><img id="cube0" src="pics/Cube0.png">   Astrid von Mühlenbrock <div class="selectLine"></div></div>
+<div class="titleContainer">
 
+    <div class="titleText">
+        <img id="cube" class="titleCube" src="pics/Cube0.png">
+        <div class="inline white">Astrid von Mühlenbrock<div class="selectLine"></div></div>
+    </div>
+
+</div>
 
 <script>
 
-
-    //vertical title
-
-    $('#cube0').css({
-        'transform' : 'rotate(-90deg)',
-        'width':'65px'
-    });
-
-    $('#verticalTitle').css({
-        'transform' : 'rotate(-90deg)',
-        'left': '-10%',
-        'top':'40%'
-    });
 
 
     //append images
     var background =  $('#background');
     var imgs = [];
     var scales = [];
-
-    function centerImage(img) {
-
-        console.log(img)
-
-    }
 
 
 

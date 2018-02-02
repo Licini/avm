@@ -19,6 +19,8 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<div class="load"> <img src="pics/load/0.gif" class="loadImg"></div>
+
 <div id="menu" class="black">
 
     <div class="menu black" id="work">Work <div class="selectLine blackLine"></div></div>  /
@@ -28,12 +30,16 @@
 
 </div>
 
-<div id="verticalTitle"><img id="cube0" src="pics/Cube.png">   Astrid von Mühlenbrock <div class="selectLine blackLine"></div></div>
-<div id="leftRowContainer"></div>
-<div id="rightRowContainer">
+<div class="titleContainer">
 
+    <div class="titleText">
+        <img id="cube" class="titleCube" src="pics/Cube.png">
+        <div class="inline">Astrid von Mühlenbrock<div class="selectLine blackLine"></div></div>
+    </div>
 
 </div>
+<div id="leftRowContainer"></div>
+<div id="rightRowContainer"></div>
 
 <div class="end">
     <br><br>
@@ -74,7 +80,7 @@
 
         for(var i=0; i<=8; i++){
 
-            $('#leftRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
+            $('#leftRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle inline">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo inline">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
             projects[i] = $('#project'+i);
 
 
@@ -84,7 +90,7 @@
         for(var i=9; i<=16; i++){
 
             //$('#rightRowContainer').append('<div id="project'+i+'" class="projectBlock"><img class="projectImg" src="pics/work/'+i+'.jpg"><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
-            $('#rightRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
+            $('#rightRowContainer').append('<div id="project'+i+'" class="projectBlock"><div class="projectImg"></div><div class="projectTitle inline">'+works[i].title+'<div class="selectLine blackLine"></div></div><div class="projectInfo inline">'+works[i].info+'</div><br><div class="projectDes">'+works[i].description+'</div></div>')
             projects[i] = $('#project'+i);
 
 
@@ -119,6 +125,13 @@
 
 
             });
+
+            p.click(function () {
+
+                //window.location.replace('detail.html?projectNum='+n);
+                goto('detail.html?projectNum='+n);
+
+            })
 
         });
 

@@ -2,33 +2,19 @@
  * Created by Li on 29/01/2018.
  */
 
+$(document).ready(function () {
 
-// $('#verticalTitle').hide();
-// $('#menu').hide();
-//
-// $(document).ready(function () {
-//
-//     $('#verticalTitle').fadeIn();
-//     $('#menu').fadeIn();
-//
-// });
+    setTimeout(function () {
+        $('.load').fadeOut(500)
+    },2000);
 
-
-$('#verticalTitle').mouseenter(function () {
-
-    $(this).find('.selectLine').fadeIn(200)
 
 });
 
-$('#verticalTitle').mouseleave(function () {
 
-    $(this).find('.selectLine').fadeOut(200)
 
-});
+$('.titleContainer').click(function () {
 
-$('#verticalTitle').click(function () {
-
-    $('#verticalTitle').animate({left:'-30%'},2000);
     $('#menu').animate({top:'-10%'},2000);
     setTimeout(function () {
 
@@ -39,38 +25,63 @@ $('#verticalTitle').click(function () {
 });
 
 
-$('.menu').mouseenter(function () {
+$('.selectLine').each(function () {
 
-    $(this).find('.selectLine').fadeIn(200)
+    var thisLine = $(this);
+
+    thisLine.show();
+    thisLine.css({width:0});
+
+    thisLine.parent().mouseenter(function () {
+
+        // thisLine.fadeIn(200)
+        thisLine.animate({width:'100%'},200)
+
+    });
+
+
+    thisLine.parent().mouseleave(function () {
+
+        // thisLine.fadeOut(200)
+        thisLine.animate({width:'0%'},200)
+
+    });
 
 });
 
-$('.menu').mouseleave(function () {
+function goto(url) {
 
-    $(this).find('.selectLine').fadeOut(200)
+    $('.load').fadeIn(500);
+    $('.verticalTitle').animate({left:'-30%'},200);
+    $('#menu').animate({top:'-10%'},1000);
+    setTimeout(function () {
+
+        window.location.replace(url)
+
+    },1000)
+
+}
+
+$('.titleContainer').click(function () {
+
+    goto('index.html')
 
 });
 
 $('#about').click(function () {
 
-    $('#verticalTitle').animate({left:'-30%'},2000);
-    $('#menu').animate({top:'-10%'},2000);
-    setTimeout(function () {
-
-        window.location.replace('about.html')
-
-    },1000)
+    goto('about.html')
 
 });
 
 $('#work').click(function () {
 
-    $('#verticalTitle').animate({left:'-30%'},2000);
-    $('#menu').animate({top:'-10%'},2000);
-    setTimeout(function () {
+    goto('work.html')
 
-        window.location.replace('work.html')
+});
 
-    },1000)
+$('#contact').click(function () {
+
+    goto('contact.html')
 
 });
