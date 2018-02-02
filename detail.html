@@ -31,28 +31,39 @@
 
 <div class="detailContainer">
 
+    <div class="detailProject"></div>
+
     <div class="detailImageContainer">
 
         <img class="detailImage" src="pics/detail/0/0.jpg">
         <img src="pics/Cube.png" class="button left">
         <img src="pics/Cube.png" class="button right">
 
+        <div class="yearContainer"><div class="yearText">20<div class="fixLine"></div></div><div class="yearText">17<div class="fixLine"></div></div></div>
+
     </div>
 
 
     <div class="detailTextContainer">
 
-        <div class="detailTitle">About</div>
-        <div id="text1" class="detailText"></div>
-        <div class="detailTitle">Execution</div>
-        <div id="text2" class="detailText"></div>
-        <div class="detailTitle">Programs Used</div>
-        <div id="text3" class="detailText"></div>
+        <!--<div class="detailTitle">About</div>-->
+        <!--<div id="text1" class="detailText"></div>-->
+        <!--<div class="detailTitle">Execution</div>-->
+        <!--<div id="text2" class="detailText"></div>-->
+        <!--<div class="detailTitle">Programs Used</div>-->
+        <!--<div id="text3" class="detailText"></div>-->
 
     </div>
 
 </div>
 
+<div class="end">
+    <br><br>
+    <h3 class="endP">detail</h3>
+    <h3 class="endP">av.muhlenbrock@gmail.com</h3>
+    <h3 class="endP">tel+6468303944</h3>
+
+</div>
 
 <script>
 
@@ -81,29 +92,65 @@
 
         console.log(data);
 
-        $('#text1').text(data.detail[detailNum]['About']);
+        $('.detailProject').text(data.detail[projectNum]['Name']);
 
 
 
-        var text = '';
-
-        data.detail[detailNum]['Execution'].forEach(function (t) {
-
-            text+= t + "<br>"
-
-        });
-
-        $('#text2').html(text);
+        appendDetail('About');
+        appendDetail('Location');
 
 
-        text = '';
-        data.detail[detailNum]['Programs Used'].forEach(function (t) {
+        var text;
 
-            text+= t + "<br>"
+        if(data.detail[projectNum]['Execution']){
 
-        });
+            $('.detailTextContainer').append(' <div class="detailTitle">Execution</div>');
+            $('.detailTextContainer').append('<div class="detailText" id="Execution"></div>');
 
-        $('#text3').html(text);
+            text = '';
+            data.detail[projectNum]['Execution'].forEach(function (t) {
+
+                text+= t + "<br>"
+
+            });
+
+            $('#Execution').html(text);
+
+        }
+
+        if(data.detail[projectNum]['Programs Used']){
+
+            $('.detailTextContainer').append(' <div class="detailTitle">Programs Used</div>');
+            $('.detailTextContainer').append('<div class="detailText" id="ProgramsUsed"></div>');
+
+            text = '';
+            data.detail[projectNum]['Programs Used'].forEach(function (t) {
+
+                text+= t + "<br>"
+
+            });
+
+            $('#ProgramsUsed').html(text);
+
+        }
+
+
+
+        appendDetail('Detail');
+
+        function appendDetail(key) {
+
+            if(data.detail[projectNum][key]){
+
+
+                $('.detailTextContainer').append(' <div class="detailTitle">'+key+'</div>');
+                $('.detailTextContainer').append('<div class="detailText">'+data.detail[projectNum][key]+'</div>');
+
+            }
+
+        }
+
+        adapt()
 
 
     });

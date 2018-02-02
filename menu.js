@@ -35,7 +35,7 @@ $('.selectLine').each(function () {
     thisLine.parent().mouseenter(function () {
 
         // thisLine.fadeIn(200)
-        thisLine.animate({width:'100%'},200)
+        thisLine.animate({width:'100%'},100)
 
     });
 
@@ -43,7 +43,7 @@ $('.selectLine').each(function () {
     thisLine.parent().mouseleave(function () {
 
         // thisLine.fadeOut(200)
-        thisLine.animate({width:'0%'},200)
+        thisLine.animate({width:'0%'},100)
 
     });
 
@@ -85,3 +85,37 @@ $('#contact').click(function () {
     goto('contact.html')
 
 });
+
+adapt();
+
+function adapt() {
+
+    if(window.innerWidth<2200){
+
+        $('.titleText').css({'font-size':'36pt'});
+        $('.titleCube').css({'width':'36px'});
+        $('#menu').css({'font-size':'20pt'});
+        $('.detailTitle').css({'font-size':'20pt'});
+        $('.detailText').css({'font-size':'14pt'});
+        $('.yearText').css({'font-size':'40pt','line-height':'30pt'});
+        $('.detailProject').css({'font-size':'40pt'});
+
+    }else{
+
+
+        $('.titleText').css({'font-size':'60pt'});
+        $('.titleCube').css({'width':'60px'});
+        $('#menu').css({'font-size':'30pt'});
+        $('.detailTitle').css({'font-size':'30pt'});
+        $('.detailText').css({'font-size':'20pt'});
+        $('.yearText').css({'font-size':'60pt','line-height':'48pt'});
+        $('.detailProject').css({'font-size':'60pt'});
+
+    }
+
+}
+
+$( window ).resize(function() {
+    adapt()
+});
+
