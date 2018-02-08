@@ -93,7 +93,7 @@ body{
 .end{
 
     width: 100%;
-    height: 200px;
+    height: 300px;
 
     background-color: whitesmoke;
 
@@ -115,8 +115,8 @@ body{
     /*display: none;*/
     position: absolute;
     width: 100%;
-    top: 50%;
-    border-bottom: solid white;
+    top: 53%;
+    border-bottom: 1.5px solid white;
 
 }
 
@@ -134,14 +134,14 @@ body{
 
 .blackLine{
 
-    border-bottom: solid black;
+    border-bottom:  1.5px solid black;
 
 }
 
 #leftRowContainer{
 
     vertical-align: top;
-    margin-top: 5%;
+    margin-top: 7%;
     margin-left: 15%;
     margin-right: 5%;
     margin-bottom: 5%;
@@ -156,7 +156,7 @@ body{
 #rightRowContainer{
 
     vertical-align: top;
-    margin-top: 5%;
+    margin-top: 7%;
     margin-bottom: 5%;
     display: inline-block;
     /*background-color: blue;*/
@@ -244,7 +244,7 @@ body{
 .maskText{
 
     position: absolute;
-    top: 45%;
+    top: 40%;
     width: 100%;
     height: 100%;
     color: white;
@@ -259,6 +259,7 @@ body{
 
     position: relative;
     margin-top:10%;
+    margin-bottom: 5%;
     left:10%;
     width: 80%;
 
@@ -273,17 +274,17 @@ body{
 
 .detailTextContainer{
 
-    margin-top: 3%;
+    margin-top: 12%;
     margin-bottom: 5%;
     position: relative;
     width: 60%;
+    vertical-align: top;
 
 }
 .yearContainer{
 
     position: absolute;
     right: 1%;
-
 
 
 }
@@ -293,9 +294,9 @@ body{
 
     position: relative;
     font-size: 40pt;
-    /*font-family: "Agency FB";*/
+    font-family: "Gill Sans MT";
     text-align: right;
-    line-height: 40pt;
+    /*height: 60pt;*/
 
 }
 
@@ -314,13 +315,15 @@ body{
 
 .detailImageContainer{
 
-    margin-top: 3%;
+    margin-top: 2%;
     position: relative;
+    vertical-align: top;
 
 }
 
 .detailImage{
 
+    /*position: relative;*/
     width: 100%;
 
 
@@ -369,30 +372,42 @@ body{
 .titleContainer{
 
     /*background-color: red;*/
-    position: fixed;
+    position: absolute;
     right: 90%;
     top: 10%;
     cursor: crosshair;
     z-index: 99;
 
+
 }
 
-.titleText{
+.rotateContainer{
+
 
     white-space: nowrap;
-    font-size: 60pt;
     transform: rotate(-90deg);
     transform-origin: right bottom 0;
     vertical-align: middle;
 
 }
 
+.titleText{
+
+    position: relative;
+    white-space: nowrap;
+    font-size: 60pt;
+    vertical-align: middle;
+
+}
+
 .titleCube{
 
-
+    position: relative;
+    margin-top: 5px;
+    margin-right: 5px;
     transform : rotate(-90deg);
     width:60px;
-
+    vertical-align: middle;
 
 }
 
@@ -418,5 +433,57 @@ body{
     left: 45%;
 
     top: 36%;
+
+}
+
+.scrollUpContainer{
+
+    position: relative;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 1%;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20pt;
+
+
+}
+
+.scrollUpCube{
+
+    cursor: crosshair;
+    width: 3.2%;
+
+
+}
+
+.aboutContainer{
+
+    position: relative;
+    margin-top: 8%;
+    /*height: 1000px;*/
+    left: 15%;
+    width: 70%;
+
+
+}
+
+.aboutVideoContainer{
+
+    position: relative;
+
+
+
+}
+
+.aboutTextContainer{
+
+
+    width: 50%;
+    position: relative;
+    font-size: 18pt;
+    font-family: Arial;
+    font-weight:normal;
+    line-height: 16pt;
 
 }

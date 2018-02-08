@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AVM</title>
+    <title>AvMS</title>
     <link rel="stylesheet" href="avm.css">
     <style>
 
         body{
 
             overflow: hidden;
+            background-color: black;
 
         }
-
     </style>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,7 +32,7 @@
 
     <div class="menu" id="work">Work <div class="selectLine"></div></div>  /
     <div class="menu" id="about">About <div class="selectLine"></div></div>  /
-    <div class="menu" id="contact">Contact <div class="selectLine"></div></div>  /
+    <div class="menu" id="contact">Résumé <div class="selectLine"></div></div>  /
 
 
 </div>
@@ -31,10 +41,9 @@
 <div id="background"><div class="bg-overlay"></div></div>
 
 <div class="titleContainer">
-
-    <div class="titleText">
+    <div class="rotateContainer">
         <img id="cube" class="titleCube" src="pics/Cube0.png">
-        <div class="inline white">Astrid von Mühlenbrock<div class="selectLine"></div></div>
+        <div class="inline white titleText">Astrid von Mühlenbrock<div class="selectLine"></div></div>
     </div>
 
 </div>
@@ -50,7 +59,7 @@
 
 
 
-    for(var i=0; i<=7;i++){
+    for(var i=0; i<=8;i++){
 
 
         background.append('<div id="background_'+i+'" class="background"></div>');
@@ -73,6 +82,12 @@
         if(i==7){
 
             imgs[i].append('<video id="video0" width="100%" style="z-index: -100;"> <source src="pics/7.mp4" type="video/mp4"> </video>');
+
+        }
+
+        if(i==8){
+
+            imgs[i].append('<video id="video1" width="100%" style="z-index: -100;"> <source src="pics/8.mp4" type="video/mp4"> </video>');
 
         }
 
@@ -149,7 +164,12 @@
                 $('#video0').get(0).play();
                 scaleSpeed = 0.0001
 
-            }else scaleSpeed = 0.0002
+            }else if(currentPic ==8) {
+
+                $('#video1').get(0).play();
+                scaleSpeed = 0.0001
+
+            }else scaleSpeed = 0.0002;
 
 
 
