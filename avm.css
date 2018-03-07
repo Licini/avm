@@ -115,8 +115,7 @@ body{
     /*display: none;*/
     position: absolute;
     width: 100%;
-    /*top: 53%;*/
-    bottom: 10%;
+    top: 53%;
     border-bottom: 1.5px solid white;
 
 }
@@ -307,8 +306,7 @@ body{
     /*display: none;*/
     position: absolute;
     width: 100%;
-    bottom: 5%;
-    visibility: hidden;
+    top: 50%;
     /*height: 50%;*/
     /*border-top: solid black;*/
     border-bottom: solid black;
